@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { obtenerHogar, type HogarDoc } from "@/lib/hogares";
 
 type Estado = "cargando" | "cargado" | "error" | "sin-hogar";
@@ -81,6 +82,14 @@ export default function HogarVista() {
       <p className="mt-2 text-neutral-500 text-sm">
         Hogar creado correctamente. Los gastos aparecerán aquí en próximas versiones.
       </p>
+      <div className="mt-6">
+        <Link
+          href="/hogar/nuevo-gasto"
+          className="inline-block rounded bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+          Añadir gasto
+        </Link>
+      </div>
     </main>
   );
 }

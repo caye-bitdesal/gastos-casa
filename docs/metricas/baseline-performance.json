@@ -1,11 +1,12 @@
 {
-  "generado": "2026-11-24T00:00:00Z",
-  "origen": "npm run build, tarea 01 — Firebase SDK integrado",
+  "generado": "2026-11-24T00:20:00Z",
+  "origen": "npm run build, tarea 02 — Alta de gasto",
   "rutas": {
-    "/": { "bundle_kb": 933 },
-    "/_not-found": { "bundle_kb": 933 },
-    "/hogar": { "bundle_kb": 933 }
+    "/": { "bundle_kb": 826 },
+    "/_not-found": { "bundle_kb": 447 },
+    "/hogar": { "bundle_kb": 834 },
+    "/hogar/nuevo-gasto": { "bundle_kb": 832 }
   },
   "lighthouse_performance_score": null,
-  "nota": "Baseline actualizado al cerrar tarea 01. El crecimiento vs esqueleto (+806%) está justificado por la inclusión del Firebase Client SDK (~375KB). Lighthouse completo pendiente hasta el primer hito (tarea 03)."
+  "nota": "Baseline actualizado al cerrar tarea 02. Bundles ligeramente menores que en tarea 01 (~10% de mejora). Lighthouse completo pendiente hasta el primer hito (tarea 03)."
 }

@@ -10,8 +10,10 @@ para que los informes de los revisores sean trazables entre iteraciones.
 - D-02 Lint y typecheck sin errores ni warnings nuevos.
 - D-03 Toda lógica de negocio nueva tiene test y los tests pasan; el test
   falla si se revierte el cambio.
-- D-06 Validación de formularios y Server Actions con `zod`, en servidor
-  (no basta con validar en el cliente).
+- D-06 ~~Validación de formularios y Server Actions con `zod`, en servidor~~
+  **[retirada]** — La app usa Client Components con el SDK de Firebase
+  directamente (sin Server Actions). La validación con `zod` se hace en
+  cliente antes de cada escritura en Firestore.
 - D-07 Cada pantalla nueva tiene estado de carga, vacío y error.
 - D-08 Accesibilidad básica: labels en formularios, `alt` en imágenes, foco
   visible.
@@ -20,22 +22,20 @@ para que los informes de los revisores sean trazables entre iteraciones.
 
 ## Seguridad (comprueba `security`)
 
-- D-04 La clave de cuenta de servicio del Admin SDK (JSON, o variables
-  `FIREBASE_SERVICE_ACCOUNT_KEY` / `FIREBASE_ADMIN_PRIVATE_KEY`) nunca está
-  en el repo ni en un archivo accesible desde un Client Component; solo en
-  variables de entorno del servidor (Vercel → Environment Variables,
-  marcadas "sensitive").
-  - Nota: las variables `NEXT_PUBLIC_FIREBASE_*` (API key, authDomain,
-    projectId...) SON públicas por diseño en Firebase y no son un fallo.
+- D-04 Las variables `NEXT_PUBLIC_FIREBASE_*` (API key, authDomain,
+  projectId...) SON públicas por diseño en Firebase y no son un fallo.
+  El Admin SDK **no se usa** en esta versión; si se añade en el futuro,
+  sus claves nunca van al repo ni a Client Components.
 - D-05 `firestore.rules` deniega todo acceso por defecto; cada colección
-  tiene una regla explícita de lectura/escritura acorde al dueño del dato.
-  Ninguna regla usa `allow read, write: if true;` sin justificación
-  comentada y aprobación humana explícita.
-- D-05b `firestore.rules` tiene al menos un test con el Firebase Emulator
-  Suite por cada colección con lógica de autorización no trivial (es decir,
-  más allá de "el dueño puede leer lo suyo").
-- D-11 Ninguna llamada a Firebase Admin SDK se hace desde un archivo con
-  `"use client"` en la cabecera, ni desde algo que ese archivo importe.
+  tiene una regla explícita. Las reglas `allow read, write: if true;` sobre
+  `hogares` y su subcolección `gastos` están justificadas: sin auth, la
+  "protección" es el UUID aleatorio del hogarId. Esta decisión está
+  documentada en el propio `firestore.rules` y aprobada explícitamente.
+- D-05b ~~test con Firebase Emulator~~ **[retirada]** — Las reglas actuales
+  son triviales (`if true` con justificación); no hay lógica de autorización
+  que testear. Se reactiva si en el futuro se añaden reglas condicionales.
+- D-11 ~~Ninguna llamada a Firebase Admin SDK...~~ **[retirada]** — El Admin
+  SDK no se usa en esta versión.
 
 ## Rendimiento (comprueba `performance`)
 

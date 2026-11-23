@@ -1,10 +1,11 @@
 {
-  "generado": "2026-11-23T21:36:00Z",
-  "origen": "npx next build, esqueleto inicial (solo / y /_not-found)",
+  "generado": "2026-11-24T00:00:00Z",
+  "origen": "npm run build, tarea 01 — Firebase SDK integrado",
   "rutas": {
-    "/": { "bundle_kb": 103 },
-    "/_not-found": { "bundle_kb": 104 }
+    "/": { "bundle_kb": 933 },
+    "/_not-found": { "bundle_kb": 933 },
+    "/hogar": { "bundle_kb": 933 }
   },
   "lighthouse_performance_score": null,
-  "nota": "Lighthouse completo pendiente hasta el primer hito real (ver docs/PLAN.md). Este baseline ligero solo cubre tamaño de bundle del esqueleto vacío."
+  "nota": "Baseline actualizado al cerrar tarea 01. El crecimiento vs esqueleto (+806%) está justificado por la inclusión del Firebase Client SDK (~375KB). Lighthouse completo pendiente hasta el primer hito (tarea 03)."
 }

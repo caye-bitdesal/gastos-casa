@@ -4,7 +4,7 @@ El Orquestador añade aquí una fila por tarea antes de lanzar `develop`.
 
 | # | Tarea | Estado | Iteraciones | Hito |
 |---|-------|--------|-------------|------|
-| 01 | Alta de hogar + datos en Firestore | pendiente | - | - |
+| 01 | Alta de hogar + datos en Firestore | ✅ hecha | 1 | - |
 | 02 | Alta de gasto con categoría y quién pagó | pendiente | - | - |
 | 03 | Listado de gastos del hogar | pendiente | - | - |
 | 04 | Cálculo de reparto de deuda entre miembros | pendiente | - | - |

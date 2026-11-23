@@ -1,0 +1,14 @@
+{
+  "generado": "2026-11-23T20:33:49.413Z",
+  "tareas": [
+    {
+      "tarea": "00-ejemplo",
+      "iteraciones_total": 2,
+      "aprobada": true,
+      "agente_que_mas_rechaza": "testing (1)",
+      "lineas_cambiadas_total": 44,
+      "bundle_kb_inicial": 142,
+      "bundle_kb_final": 142
+    }
+  ]
+}

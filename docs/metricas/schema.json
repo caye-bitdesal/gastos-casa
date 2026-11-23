@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Iteracion de tarea",
+  "description": "Un fichero docs/metricas/tareas/<tarea>/iteracion-N.json por cada vuelta del bucle testing→security/performance. Lo escribe el Orquestador combinando los bloques RESULTADO de cada revisor.",
+  "type": "object",
+  "required": ["tarea", "iteracion", "timestamp", "veredicto_global"],
+  "properties": {
+    "tarea": { "type": "string", "description": "Identificador, p.ej. 01-login" },
+    "iteracion": { "type": "integer", "minimum": 1 },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "lineas_cambiadas": { "type": "integer" },
+    "testing": {
+      "type": "object",
+      "properties": {
+        "veredicto": { "enum": ["APROBADO", "RECHAZADO"] },
+        "tests_total": { "type": "integer" },
+        "tests_pass": { "type": "integer" },
+        "cobertura_delta_pct": { "type": "number" },
+        "lint_errores": { "type": "integer" },
+        "typecheck_errores": { "type": "integer" },
+        "build_ok": { "type": "boolean" },
+        "fallos": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "security": {
+      "type": "object",
+      "properties": {
+        "veredicto": { "enum": ["APROBADO", "RECHAZADO"] },
+        "secretos_encontrados": { "type": "integer" },
+        "reglas_firestore_ok": { "type": "boolean" },
+        "fallos": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "performance": {
+      "type": "object",
+      "properties": {
+        "modo": { "enum": ["ligero", "completo"] },
+        "veredicto": { "enum": ["APROBADO", "RECHAZADO"] },
+        "bundle_kb": { "type": "number" },
+        "delta_vs_baseline_pct": { "type": "number" },
+        "lighthouse_performance_score": { "type": ["number", "null"] },
+        "fallos": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "veredicto_global": { "enum": ["APROBADO", "RECHAZADO"] }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "tarea": "00-ejemplo",
+  "iteracion": 2,
+  "timestamp": "2026-11-23T00:20:00Z",
+  "lineas_cambiadas": 6,
+  "testing": { "veredicto": "APROBADO", "tests_total": 4, "tests_pass": 4, "cobertura_delta_pct": 2, "lint_errores": 0, "typecheck_errores": 0, "build_ok": true, "fallos": [] },
+  "security": { "veredicto": "APROBADO", "secretos_encontrados": 0, "reglas_firestore_ok": true, "fallos": [] },
+  "performance": { "modo": "ligero", "veredicto": "APROBADO", "bundle_kb": 142, "delta_vs_baseline_pct": 0, "lighthouse_performance_score": null, "fallos": [] },
+  "veredicto_global": "APROBADO"
+}

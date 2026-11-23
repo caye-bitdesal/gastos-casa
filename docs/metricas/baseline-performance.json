@@ -1,0 +1,10 @@
+{
+  "generado": "2026-11-23T21:36:00Z",
+  "origen": "npx next build, esqueleto inicial (solo / y /_not-found)",
+  "rutas": {
+    "/": { "bundle_kb": 103 },
+    "/_not-found": { "bundle_kb": 104 }
+  },
+  "lighthouse_performance_score": null,
+  "nota": "Lighthouse completo pendiente hasta el primer hito real (ver docs/PLAN.md). Este baseline ligero solo cubre tamaño de bundle del esqueleto vacío."
+}

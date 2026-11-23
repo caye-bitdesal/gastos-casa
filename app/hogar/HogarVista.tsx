@@ -82,12 +82,18 @@ export default function HogarVista() {
       <p className="mt-2 text-neutral-500 text-sm">
         Hogar creado correctamente. Los gastos aparecerán aquí en próximas versiones.
       </p>
-      <div className="mt-6">
+      <div className="mt-6 flex flex-wrap gap-3">
         <Link
           href="/hogar/nuevo-gasto"
           className="inline-block rounded bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
         >
           Añadir gasto
+        </Link>
+        <Link
+          href="/hogar/gastos"
+          className="inline-block rounded border border-neutral-300 px-4 py-2 text-sm font-medium text-neutral-700 hover:bg-neutral-50 focus:outline-none focus:ring-2 focus:ring-neutral-400"
+        >
+          Ver gastos
         </Link>
       </div>
     </main>

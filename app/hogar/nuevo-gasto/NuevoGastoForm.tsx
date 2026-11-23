@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { crearGasto, crearGastoSchema } from "@/lib/gastos";
+import { crearGasto, actualizarGasto, obtenerGasto, crearGastoSchema } from "@/lib/gastos";
 import { useHogarData } from "@/lib/hooks/useHogarData";
 import { GastoFormFields } from "./GastoFormFields";
 
@@ -12,7 +12,9 @@ function hoy(): string {
   return new Date().toISOString().slice(0, 10);
 }
 
-export default function NuevoGastoForm() {
+type Props = { gastoId?: string };
+
+export default function NuevoGastoForm({ gastoId }: Props) {
   const router = useRouter();
   const { hogarId, categorias, miembros, cargandoHogar, errorHogar, setCategorias, setMiembros } =
     useHogarData();
@@ -27,12 +29,32 @@ export default function NuevoGastoForm() {
   const [errores, setErrores] = useState<CampoError>({});
   const [guardando, setGuardando] = useState(false);
   const [exito, setExito] = useState(false);
+  const [cargandoGasto, setCargandoGasto] = useState(!!gastoId);
 
   useEffect(() => {
-    if (categorias.length > 0) {
+    if (categorias.length > 0 && !gastoId) {
       setCategoria(categorias[0] ?? "__nueva__");
     }
-  }, [categorias]);
+  }, [categorias, gastoId]);
+
+  useEffect(() => {
+    if (!gastoId || !hogarId) return;
+    setCargandoGasto(true);
+    obtenerGasto(hogarId, gastoId)
+      .then((g) => {
+        if (!g) {
+          setErrores({ general: "No se encontró el gasto a editar." });
+          return;
+        }
+        setImporte(String(g.importe));
+        setDescripcion(g.descripcion);
+        setCategoria(g.categoria);
+        setFecha(g.fecha);
+        setPagadoPor(g.pagadoPor);
+      })
+      .catch(() => setErrores({ general: "Error al cargar el gasto." }))
+      .finally(() => setCargandoGasto(false));
+  }, [gastoId, hogarId]);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -62,7 +84,11 @@ export default function NuevoGastoForm() {
 
     setGuardando(true);
     try {
-      await crearGasto(hogarId, parsed.data, categorias, miembros);
+      if (gastoId) {
+        await actualizarGasto(hogarId, gastoId, parsed.data, categorias, miembros);
+      } else {
+        await crearGasto(hogarId, parsed.data, categorias, miembros);
+      }
 
       if (!categorias.includes(categoriaFinal)) {
         setCategorias((prev) => [...prev, categoriaFinal]);
@@ -71,13 +97,17 @@ export default function NuevoGastoForm() {
         setMiembros((prev) => [...prev, parsed.data.pagadoPor]);
       }
 
-      setImporte("");
-      setDescripcion("");
-      setCategoria(categorias.length > 0 ? (categorias[0] ?? "__nueva__") : "__nueva__");
-      setNuevaCategoria("");
-      setFecha(hoy());
-      setPagadoPor("");
-      setExito(true);
+      if (gastoId) {
+        router.push("/hogar/gastos");
+      } else {
+        setImporte("");
+        setDescripcion("");
+        setCategoria(categorias.length > 0 ? (categorias[0] ?? "__nueva__") : "__nueva__");
+        setNuevaCategoria("");
+        setFecha(hoy());
+        setPagadoPor("");
+        setExito(true);
+      }
     } catch {
       setErrores({ general: "Error al guardar el gasto. Inténtalo de nuevo." });
     } finally {
@@ -85,10 +115,10 @@ export default function NuevoGastoForm() {
     }
   }
 
-  if (cargandoHogar) {
+  if (cargandoHogar || cargandoGasto) {
     return (
       <p className="text-neutral-500" role="status" aria-live="polite">
-        Cargando datos del hogar…
+        {cargandoGasto ? "Cargando gasto…" : "Cargando datos del hogar…"}
       </p>
     );
   }
@@ -130,7 +160,8 @@ export default function NuevoGastoForm() {
         miembros={miembros}
         errores={errores}
         guardando={guardando}
-        onCancel={() => router.push("/hogar")}
+        modoEdicion={!!gastoId}
+        onCancel={() => router.push(gastoId ? "/hogar/gastos" : "/hogar")}
       />
     </form>
   );

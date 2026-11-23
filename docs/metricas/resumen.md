@@ -1,8 +1,8 @@
 # Resumen de métricas
 
-Generado: 2026-11-23T23:23:29.765Z
+Generado: 2026-11-23T23:38:16.968Z
 
-Media de iteraciones hasta aprobar: **1.7**
+Media de iteraciones hasta aprobar: **1.5**
 (si esta cifra sube con el tiempo, las DIRECTRICES no están claras para
 `develop`; si baja, el equipo está convergiendo mejor en primera pasada)
 
@@ -11,6 +11,7 @@ Media de iteraciones hasta aprobar: **1.7**
 | 00-ejemplo | 2 | ✅ | testing (1) | 44 |
 | 01-alta-hogar | 1 | ✅ | - | 272 |
 | 02-alta-gasto | 2 | ✅ | testing (1) | 1080 |
+| 03-listado-gastos | 1 | ✅ | - | 602 |
 
 Ver también [resumen.html](./resumen.html) para el gráfico, y
 [resumen.json](./resumen.json) para los datos crudos.

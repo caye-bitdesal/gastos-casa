@@ -1,5 +1,5 @@
 {
-  "generado": "2026-11-23T23:23:29.764Z",
+  "generado": "2026-11-23T23:38:16.968Z",
   "tareas": [
     {
       "tarea": "00-ejemplo",
@@ -27,6 +27,15 @@
       "lineas_cambiadas_total": 1080,
       "bundle_kb_inicial": null,
       "bundle_kb_final": 832
+    },
+    {
+      "tarea": "03-listado-gastos",
+      "iteraciones_total": 1,
+      "aprobada": true,
+      "agente_que_mas_rechaza": "-",
+      "lineas_cambiadas_total": 602,
+      "bundle_kb_inicial": 834,
+      "bundle_kb_final": 834
     }
   ]
 }

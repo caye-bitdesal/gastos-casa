@@ -19,6 +19,7 @@ type GastoFormFieldsProps = {
   miembros: string[];
   errores: CampoError;
   guardando: boolean;
+  modoEdicion?: boolean;
   onCancel: () => void;
 };
 
@@ -33,6 +34,7 @@ export function GastoFormFields({
   miembros,
   errores,
   guardando,
+  modoEdicion = false,
   onCancel,
 }: GastoFormFieldsProps) {
   return (
@@ -173,7 +175,7 @@ export function GastoFormFields({
           disabled={guardando}
           className="rounded bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:opacity-50"
         >
-          {guardando ? "Guardando…" : "Guardar gasto"}
+          {guardando ? "Guardando…" : modoEdicion ? "Actualizar gasto" : "Guardar gasto"}
         </button>
         <button
           type="button"

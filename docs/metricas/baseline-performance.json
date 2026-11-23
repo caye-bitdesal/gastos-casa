@@ -1,12 +1,13 @@
 {
-  "generado": "2026-11-24T00:20:00Z",
-  "origen": "npm run build, tarea 02 — Alta de gasto",
+  "generado": "2026-11-24T00:30:00Z",
+  "origen": "npm run build, tarea 03 — Listado de gastos",
   "rutas": {
-    "/": { "bundle_kb": 826 },
-    "/_not-found": { "bundle_kb": 447 },
-    "/hogar": { "bundle_kb": 834 },
-    "/hogar/nuevo-gasto": { "bundle_kb": 832 }
+    "/": { "bundle_kb": 820 },
+    "/_not-found": { "bundle_kb": 437 },
+    "/hogar": { "bundle_kb": 828 },
+    "/hogar/nuevo-gasto": { "bundle_kb": 828 },
+    "/hogar/gastos": { "bundle_kb": 834 }
   },
   "lighthouse_performance_score": null,
-  "nota": "Baseline actualizado al cerrar tarea 02. Bundles ligeramente menores que en tarea 01 (~10% de mejora). Lighthouse completo pendiente hasta el primer hito (tarea 03)."
+  "nota": "Baseline actualizado al cerrar tarea 03. Hito: Lighthouse completo pendiente de indicación explícita del usuario."
 }

@@ -1,5 +1,5 @@
-import HogarVista from "@/app/hogar/HogarVista";
+import { redirect } from "next/navigation";
 
 export default function HogarPage() {
-  return <HogarVista />;
+  redirect("/hogar/resumen");
 }

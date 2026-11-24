@@ -10,8 +10,8 @@ import {
   serverTimestamp,
   query,
   orderBy,
-  Timestamp,
 } from "firebase/firestore";
+import type { Timestamp } from "firebase/firestore";
 import { db } from "@/lib/firebase/client";
 import { type CrearGastoInput } from "@/lib/gastos.schema";
 

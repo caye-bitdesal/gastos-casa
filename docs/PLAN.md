@@ -9,6 +9,7 @@ El Orquestador añade aquí una fila por tarea antes de lanzar `develop`.
 | 03 | Listado de gastos del hogar | ✅ hecha | 1 | ✅ Lighthouse 100 |
 | 04 | Cálculo de reparto de deuda entre miembros | ✅ hecha | 2 | - |
 | 05 | Resumen mensual por hogar | ✅ hecha | 1 | ✅ Lighthouse 100 |
+| 06 | Rediseño UI "Juntos" | 🔄 en curso | 0 | - |
 
 "Hito" se marca cuando al cerrar esa tarea se dispara `performance` en modo
 completo (p. ej. tras la 03 y tras la 05, antes de desplegar).

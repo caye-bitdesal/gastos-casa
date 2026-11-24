@@ -18,7 +18,7 @@ export default function HogarRedirect() {
   useEffect(() => {
     const hogarId = localStorage.getItem("hogarId");
     if (hogarId) {
-      router.replace("/hogar");
+      router.replace("/hogar/resumen");
     } else {
       setChecking(false);
     }
@@ -44,7 +44,7 @@ export default function HogarRedirect() {
     try {
       const hogarId = await crearHogar(validation.data.nombre);
       localStorage.setItem("hogarId", hogarId);
-      router.push("/hogar");
+      router.push("/hogar/resumen");
     } catch {
       setFormState("error");
       setErrorMsg("No se pudo crear el hogar. Inténtalo de nuevo.");

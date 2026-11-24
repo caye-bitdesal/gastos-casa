@@ -3,7 +3,6 @@
 // no controlan el acceso a los datos (eso lo hace firestore.rules), así que
 // no hace falta ocultarlas. Ver docs/DIRECTRICES.md D-04.
 import { initializeApp, getApps, getApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
@@ -16,5 +15,4 @@ const firebaseConfig = {
 };
 
 export const firebaseApp = getApps().length ? getApp() : initializeApp(firebaseConfig);
-export const auth = getAuth(firebaseApp);
 export const db = getFirestore(firebaseApp);

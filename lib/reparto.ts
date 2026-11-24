@@ -1,11 +1,7 @@
-import { z } from "zod";
-
-export const gastoSchema = z.object({
-  importe: z.number().positive("El importe debe ser mayor que cero"),
-  pagadoPor: z.string().min(1),
-});
-
-export type Gasto = z.infer<typeof gastoSchema>;
+export type Gasto = {
+  importe: number;
+  pagadoPor: string;
+};
 
 export type Transferencia = { de: string; a: string; importe: number };
 

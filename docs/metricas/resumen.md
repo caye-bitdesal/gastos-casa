@@ -1,6 +1,6 @@
 # Resumen de métricas
 
-Generado: 2026-11-24T00:14:43.943Z
+Generado: 2026-11-24T06:55:06.460Z
 
 Media de iteraciones hasta aprobar: **1.5**
 (si esta cifra sube con el tiempo, las DIRECTRICES no están claras para

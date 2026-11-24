@@ -1,14 +1,22 @@
 {
-  "generado": "2026-11-24T00:50:00Z",
-  "origen": "npm run build, tarea 04 — Reparto de deuda (zod v3.25.76)",
+  "generado": "2026-11-24T01:20:00Z",
+  "origen": "npm run build + next start + Lighthouse, hito cierre tareas 03 y 05",
   "rutas": {
-    "/": { "bundle_kb": 779 },
-    "/_not-found": { "bundle_kb": 447 },
-    "/hogar": { "bundle_kb": 787 },
-    "/hogar/nuevo-gasto": { "bundle_kb": 787 },
-    "/hogar/gastos": { "bundle_kb": 793 },
-    "/hogar/reparto": { "bundle_kb": 788 }
+    "/": { "bundle_kb": 779, "lighthouse_score": 97 },
+    "/_not-found": { "bundle_kb": 447, "lighthouse_score": null },
+    "/hogar": { "bundle_kb": 787, "lighthouse_score": 100 },
+    "/hogar/nuevo-gasto": { "bundle_kb": 787, "lighthouse_score": null },
+    "/hogar/gastos": { "bundle_kb": 793, "lighthouse_score": 100 },
+    "/hogar/reparto": { "bundle_kb": 788, "lighthouse_score": 100 },
+    "/hogar/resumen": { "bundle_kb": 738, "lighthouse_score": 100 }
   },
-  "lighthouse_performance_score": null,
-  "nota": "Baseline actualizado al cerrar tarea 04. Zod revertido a v3 — bundles ~5% menores que en tarea 03. Lighthouse completo pendiente de indicación explícita."
+  "lighthouse_performance_score": 99,
+  "core_web_vitals": {
+    "/": { "LCP_s": 2.4, "CLS": 0, "TBT_ms": 70 },
+    "/hogar": { "LCP_s": 0.8, "CLS": 0, "TBT_ms": 60 },
+    "/hogar/gastos": { "LCP_s": 0.8, "CLS": 0, "TBT_ms": 40 },
+    "/hogar/reparto": { "LCP_s": 0.8, "CLS": 0, "TBT_ms": 60 },
+    "/hogar/resumen": { "LCP_s": 0.8, "CLS": 0, "TBT_ms": 40 }
+  },
+  "nota": "Primera medición Lighthouse. CLS=0 en todas las rutas. Media 99/100."
 }

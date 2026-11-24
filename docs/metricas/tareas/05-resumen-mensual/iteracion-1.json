@@ -1,0 +1,36 @@
+{
+  "tarea": "05-resumen-mensual",
+  "iteracion": 1,
+  "timestamp": "2026-11-24T01:10:00Z",
+  "lineas_cambiadas": 395,
+  "testing": {
+    "veredicto": "APROBADO",
+    "tests_total": 50,
+    "tests_pass": 50,
+    "cobertura_delta_pct": 0,
+    "lint_errores": 0,
+    "typecheck_errores": 0,
+    "build_ok": true,
+    "fallos": []
+  },
+  "security": {
+    "veredicto": "APROBADO",
+    "secretos_encontrados": 0,
+    "reglas_firestore_ok": true,
+    "fallos": []
+  },
+  "performance": {
+    "modo": "ligero",
+    "veredicto": "APROBADO",
+    "bundle_kb": 793,
+    "delta_vs_baseline_pct": 0.0,
+    "lighthouse_performance_score": null,
+    "fallos": [],
+    "notas": [
+      "Nueva ruta /hogar/resumen: 738 KB. Chunk propio: 14 KB. Sin dependencias nuevas.",
+      "Todas las rutas existentes con delta entre -0.2% y 0.0% — sin alertas.",
+      "Lighthouse completo pendiente de indicación explícita (hito tarea 05)."
+    ]
+  },
+  "veredicto_global": "APROBADO"
+}

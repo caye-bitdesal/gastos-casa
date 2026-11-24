@@ -1,5 +1,5 @@
 {
-  "generado": "2026-11-24T00:03:27.251Z",
+  "generado": "2026-11-24T00:14:43.943Z",
   "tareas": [
     {
       "tarea": "00-ejemplo",
@@ -44,6 +44,15 @@
       "agente_que_mas_rechaza": "performance (1)",
       "lineas_cambiadas_total": 488,
       "bundle_kb_inicial": 949,
+      "bundle_kb_final": 793
+    },
+    {
+      "tarea": "05-resumen-mensual",
+      "iteraciones_total": 1,
+      "aprobada": true,
+      "agente_que_mas_rechaza": "-",
+      "lineas_cambiadas_total": 395,
+      "bundle_kb_inicial": 793,
       "bundle_kb_final": 793
     }
   ]

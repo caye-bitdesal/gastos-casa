@@ -1,0 +1,34 @@
+{
+  "tarea": "04-reparto-deuda",
+  "iteracion": 1,
+  "timestamp": "2026-11-24T00:40:00Z",
+  "lineas_cambiadas": 244,
+  "testing": {
+    "veredicto": "APROBADO",
+    "tests_total": 37,
+    "tests_pass": 37,
+    "cobertura_delta_pct": 0,
+    "lint_errores": 0,
+    "typecheck_errores": 0,
+    "build_ok": true,
+    "fallos": []
+  },
+  "security": {
+    "veredicto": "APROBADO",
+    "secretos_encontrados": 0,
+    "reglas_firestore_ok": true,
+    "fallos": []
+  },
+  "performance": {
+    "modo": "ligero",
+    "veredicto": "RECHAZADO",
+    "bundle_kb": 949,
+    "delta_vs_baseline_pct": 27.3,
+    "lighthouse_performance_score": null,
+    "fallos": [
+      "P-01 /_not-found creció +27.3% — 556 KB actual vs 437 KB baseline (umbral: 15%)",
+      "P-02 Nueva dependencia pesada sin justificación: core-js v3.38.1 (110 KB), efecto de actualización zod v3→v4"
+    ]
+  },
+  "veredicto_global": "RECHAZADO"
+}

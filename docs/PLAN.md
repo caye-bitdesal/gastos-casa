@@ -7,7 +7,7 @@ El Orquestador añade aquí una fila por tarea antes de lanzar `develop`.
 | 01 | Alta de hogar + datos en Firestore | ✅ hecha | 1 | - |
 | 02 | Alta de gasto con categoría y quién pagó | ✅ hecha | 2 | - |
 | 03 | Listado de gastos del hogar | ✅ hecha | 1 | pendiente |
-| 04 | Cálculo de reparto de deuda entre miembros | pendiente | - | - |
+| 04 | Cálculo de reparto de deuda entre miembros | ✅ hecha | 2 | - |
 | 05 | Resumen mensual por hogar | pendiente | - | - |
 
 "Hito" se marca cuando al cerrar esa tarea se dispara `performance` en modo

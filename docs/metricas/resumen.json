@@ -1,5 +1,5 @@
 {
-  "generado": "2026-11-23T23:38:16.968Z",
+  "generado": "2026-11-24T00:03:27.251Z",
   "tareas": [
     {
       "tarea": "00-ejemplo",
@@ -36,6 +36,15 @@
       "lineas_cambiadas_total": 602,
       "bundle_kb_inicial": 834,
       "bundle_kb_final": 834
+    },
+    {
+      "tarea": "04-reparto-deuda",
+      "iteraciones_total": 2,
+      "aprobada": true,
+      "agente_que_mas_rechaza": "performance (1)",
+      "lineas_cambiadas_total": 488,
+      "bundle_kb_inicial": 949,
+      "bundle_kb_final": 793
     }
   ]
 }

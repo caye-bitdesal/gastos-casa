@@ -95,6 +95,12 @@ export default function HogarVista() {
         >
           Ver gastos
         </Link>
+        <Link
+          href="/hogar/reparto"
+          className="inline-block rounded border border-neutral-300 px-4 py-2 text-sm font-medium text-neutral-700 hover:bg-neutral-50 focus:outline-none focus:ring-2 focus:ring-neutral-400"
+        >
+          Ver reparto
+        </Link>
       </div>
     </main>
   );

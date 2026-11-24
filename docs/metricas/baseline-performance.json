@@ -1,13 +1,14 @@
 {
-  "generado": "2026-11-24T00:30:00Z",
-  "origen": "npm run build, tarea 03 — Listado de gastos",
+  "generado": "2026-11-24T00:50:00Z",
+  "origen": "npm run build, tarea 04 — Reparto de deuda (zod v3.25.76)",
   "rutas": {
-    "/": { "bundle_kb": 820 },
-    "/_not-found": { "bundle_kb": 437 },
-    "/hogar": { "bundle_kb": 828 },
-    "/hogar/nuevo-gasto": { "bundle_kb": 828 },
-    "/hogar/gastos": { "bundle_kb": 834 }
+    "/": { "bundle_kb": 779 },
+    "/_not-found": { "bundle_kb": 447 },
+    "/hogar": { "bundle_kb": 787 },
+    "/hogar/nuevo-gasto": { "bundle_kb": 787 },
+    "/hogar/gastos": { "bundle_kb": 793 },
+    "/hogar/reparto": { "bundle_kb": 788 }
   },
   "lighthouse_performance_score": null,
-  "nota": "Baseline actualizado al cerrar tarea 03. Hito: Lighthouse completo pendiente de indicación explícita del usuario."
+  "nota": "Baseline actualizado al cerrar tarea 04. Zod revertido a v3 — bundles ~5% menores que en tarea 03. Lighthouse completo pendiente de indicación explícita."
 }
